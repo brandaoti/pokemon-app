@@ -6,11 +6,12 @@ import 'package:pokemon_app/app/shared/models/pokemon.dart';
 class PokemonApi {
   //
   final String _authority = "pokeapi.co";
-  final String _path = "/api/v2/pokemon/1";
+  // final String _path = "/api/v2/pokemon/1";
 
   // Metodo para fazer a requisição da api
-  Future<Pokemon> fetchPokemon() async {
-    final _response = await http.get(Uri.https(_authority, _path));
+  Future<Pokemon> fetchPokemon(int idPokemon) async {
+    final _response =
+        await http.get(Uri.https(_authority, '/api/v2/pokemon/$idPokemon'));
 
     print('Request OK');
 
@@ -18,6 +19,8 @@ class PokemonApi {
       final pokemon = Pokemon.fromJson(jsonDecode(_response.body));
 
       return pokemon;
-    } else {}
+    } else {
+      return throw 'Error no retorno da api';
+    }
   }
 }

@@ -1,3 +1,6 @@
+import 'dart:math';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_controller.dart';
 import 'package:pokemon_app/app/shared/models/pokemon.dart';
@@ -54,23 +57,27 @@ class _PokemonViewState extends State<PokemonView> {
 
                       default:
                         if (snapshot.hasError) {
-                          return Text('Erro ao carregar pokemon!');
+                          return Text('Pokemon não encontrado!');
                         }
                         //
                         else {
                           return Container(
-                            color: Colors.orange,
-                            child: Column(
-                              // crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Image.network(
-                                  snapshot.data.sprite,
-                                  // width: 200,
-                                  // height: 200,
-                                  // fit: BoxFit.cover,
-                                ),
-                                Text(snapshot.data.name),
-                              ],
+                            width: 300.0,
+                            height: 300.0,
+                            alignment: Alignment.bottomCenter,
+                            decoration: BoxDecoration(
+                              // color: Colors.red,
+                              image: DecorationImage(
+                                  image: NetworkImage(snapshot.data.sprite),
+                                  fit: BoxFit.cover),
+                            ),
+                            child: Text(
+                              snapshot.data.name,
+                              style: TextStyle(
+                                fontSize: 24.0,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 2.0,
+                              ),
                             ),
                           );
                         }
@@ -89,6 +96,7 @@ class _PokemonViewState extends State<PokemonView> {
             child: Text('Buscar Pokemon'),
             onPressed: () {
               setState(() {
+                // controller.loadingPokemon();
                 controller.loadPokemon();
               });
             },
