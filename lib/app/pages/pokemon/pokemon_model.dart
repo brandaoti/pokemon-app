@@ -9,12 +9,12 @@ class PokemonModel {
   Future<Pokemon> _pokemon;
 
   // getter para ter acesso a variavel _pokemon e acessá-la do controller
-  Future<Pokemon> get pokemon {
+  Future<Pokemon> get getPokemon {
     return _pokemon;
   }
 
   // Método para receber os dados da API
-  Future<Pokemon> getPokemon() {
+  Future<Pokemon> requestPokemonApi() {
     return _pokemon = _pokemonApi.fetchPokemon();
   }
 }
