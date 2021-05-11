@@ -13,6 +13,31 @@ class _PokemonViewState extends State<PokemonView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    final _size = MediaQuery.of(context).size;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cubos Academy - Pokemon app'),
+      ),
+      body: SafeArea(
+        child: Container(
+          width: _size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Exibir nome do pokemon'),
+              ElevatedButton(
+                child: Text('Buscar Pokemon'),
+                onPressed: () {
+                  setState(() {
+                    controller.loadPokemon();
+                  });
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
