@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:pokemon_app/app/shared/models/pokemon.dart';
 import 'package:pokemon_app/app/shared/repository/pokemon_api.dart';
 
@@ -25,13 +23,4 @@ class PokemonModel {
   Future<Pokemon> requestPokemonApi(int id) {
     return _pokemon = _pokemonApi.fetchPokemon(id);
   }
-
-  // ! (Verificar) Função closure
-  // Future<Pokemon> _randomPokemonID(Function(int id) onFunction) {
-  //   print('Não sei pq cheguei');
-  //   return _pokemonID = onFunction(_pokemonID);
-  // }
-
-  // ! para acessar a função closure no controller
-  // Function get getFunction => _randomPokemonID;
 }

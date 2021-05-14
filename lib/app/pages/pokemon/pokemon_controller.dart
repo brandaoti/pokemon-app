@@ -19,12 +19,7 @@ class PokemonController {
     final randomID = Random();
 
     _pokemonModel.setPokemonID = randomID.nextInt(897);
+
     return _pokemonModel.requestPokemonApi(_pokemonID);
   }
-
-  // ! Acessa a função closure e faz o controle para chamada da view
-  // Future<Pokemon> loadingPokemon() async {
-  //   Future<Pokemon> pokemon = await _pokemonModel.getFunction(loadPokemon());
-  //   return pokemon;
-  // }
 }

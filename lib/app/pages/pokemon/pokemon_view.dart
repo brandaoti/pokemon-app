@@ -96,7 +96,6 @@ class _PokemonViewState extends State<PokemonView> {
             child: Text('Buscar Pokemon'),
             onPressed: () {
               setState(() {
-                // controller.loadingPokemon();
                 controller.loadPokemon();
               });
             },
