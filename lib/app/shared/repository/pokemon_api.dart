@@ -10,8 +10,7 @@ class PokemonApi {
 
   // Metodo para fazer a requisição da api
   Future<Pokemon> fetchPokemon(int idPokemon) async {
-    final _response =
-        await http.get(Uri.https(_authority, '/api/v2/pokemon/$idPokemon'));
+    final _response = await http.get(Uri.https(_authority, '/api/v2/pokemon/$idPokemon'));
 
     print('Request OK');
 

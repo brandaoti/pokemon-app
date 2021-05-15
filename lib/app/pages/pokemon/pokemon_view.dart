@@ -68,11 +68,11 @@ class _PokemonViewState extends State<PokemonView> {
                             decoration: BoxDecoration(
                               // color: Colors.red,
                               image: DecorationImage(
-                                  image: NetworkImage(snapshot.data.sprite),
+                                  image: NetworkImage(snapshot.data.pokemonSprite),
                                   fit: BoxFit.cover),
                             ),
                             child: Text(
-                              snapshot.data.name,
+                              snapshot.data.pokemonName,
                               style: TextStyle(
                                 fontSize: 24.0,
                                 fontWeight: FontWeight.bold,
