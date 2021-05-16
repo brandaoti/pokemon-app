@@ -17,6 +17,7 @@ class PokemonApi {
     if (_response.statusCode == 200) {
       final pokemon = Pokemon.fromJson(jsonDecode(_response.body));
 
+      print(idPokemon);
       return pokemon;
     } else {
       return throw 'Error no retorno da api';

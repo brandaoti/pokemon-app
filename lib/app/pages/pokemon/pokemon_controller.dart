@@ -15,7 +15,7 @@ class PokemonController {
   int get _pokemonID => _pokemonModel.getPokemonID;
 
   // Método para pegar os dados do model
-  Future<Pokemon> loadPokemon() {
+  loadPokemon() {
     final randomID = Random();
 
     _pokemonModel.setPokemonID = randomID.nextInt(897);

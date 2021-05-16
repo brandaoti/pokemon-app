@@ -20,7 +20,7 @@ class PokemonModel {
   }
 
   // Método para receber os dados da API
-  Future<Pokemon> requestPokemonApi(int id) {
+  requestPokemonApi(int id) {
     return _pokemon = _pokemonApi.fetchPokemon(id);
   }
 }

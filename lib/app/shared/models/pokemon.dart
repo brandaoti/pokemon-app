@@ -1,33 +1,38 @@
 import 'package:flutter/material.dart';
 
 class Pokemon {
-  String pokemonName;
-  String pokemonSprite;
-  List<Ability> pokemonAbilities;
+  final String pokemonName;
+  final String pokemonSprite;
+  final List<Ability> pokemonAbilities;
+
   Pokemon({
     @required this.pokemonName,
     @required this.pokemonSprite,
     this.pokemonAbilities,
   });
 
-  Pokemon.fromJson(Map<String, dynamic> json) {
-    pokemonName = json["name"];
-    pokemonSprite = json["sprites"]["front_default"];
+  factory Pokemon.fromJson(Map<String, dynamic> json) {
+    //
+    var listOfAbilities = json['abilities'] as List;
 
-    var arryAbilities = json['abilities'] as List;
-
-    pokemonAbilities = arryAbilities.map((item) {
+    var pokemonAbilities = listOfAbilities.map((item) {
       return Ability.fromJson(item['ability']);
     }).toList();
+
+    return Pokemon(
+      pokemonName: json['name'],
+      pokemonSprite: json['sprites']['front_default'],
+      pokemonAbilities: pokemonAbilities,
+    );
   }
 }
 
-// Classe abilities
+// Class Ability
 class Ability {
   final String abilityName;
   final String abilityUrl;
 
-  Ability({@required this.abilityName, @required this.abilityUrl});
+  Ability({this.abilityName, this.abilityUrl});
 
   factory Ability.fromJson(Map<String, dynamic> json) {
     return Ability(

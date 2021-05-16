@@ -26,7 +26,7 @@ class _PokemonViewState extends State<PokemonView> {
       body: SafeArea(
         child: Container(
           width: _size.width,
-          color: Colors.green,
+          // color: Colors.green,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -61,24 +61,42 @@ class _PokemonViewState extends State<PokemonView> {
                         }
                         //
                         else {
-                          return Container(
-                            width: 300.0,
-                            height: 300.0,
-                            alignment: Alignment.bottomCenter,
-                            decoration: BoxDecoration(
-                              // color: Colors.red,
-                              image: DecorationImage(
-                                  image: NetworkImage(snapshot.data.pokemonSprite),
-                                  fit: BoxFit.cover),
-                            ),
-                            child: Text(
-                              snapshot.data.pokemonName,
-                              style: TextStyle(
-                                fontSize: 24.0,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 2.0,
+                          return Column(
+                            children: [
+                              Container(
+                                width: 300.0,
+                                height: 300.0,
+                                alignment: Alignment.bottomCenter,
+                                decoration: BoxDecoration(
+                                  color: Colors.red,
+                                  image: DecorationImage(
+                                      image: NetworkImage(snapshot.data.pokemonSprite),
+                                      fit: BoxFit.cover),
+                                ),
+                                child: Text(
+                                  snapshot.data.pokemonName,
+                                  style: TextStyle(
+                                    fontSize: 24.0,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 2.0,
+                                  ),
+                                ),
                               ),
-                            ),
+                              Container(
+                                height: 100,
+                                width: 100,
+                                color: Colors.blue,
+                                child: ListView.builder(
+                                  itemCount: snapshot.data.pokemonAbilities.length,
+                                  itemBuilder: (context, index) {
+                                    var pokemon = snapshot.data.pokemonAbilities[index];
+                                    return Text(
+                                      pokemon.abilityName,
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
                           );
                         }
                     }
