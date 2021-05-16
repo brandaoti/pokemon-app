@@ -20,9 +20,10 @@ class _PokemonViewState extends State<PokemonView> {
     final _size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cubos Academy - Pokemon app'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Cubos Academy - Pokemon app'),
+      // ),
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           width: _size.width,
@@ -68,7 +69,7 @@ class _PokemonViewState extends State<PokemonView> {
                                 height: 300.0,
                                 alignment: Alignment.bottomCenter,
                                 decoration: BoxDecoration(
-                                  color: Colors.red,
+                                  // color: Colors.red,
                                   image: DecorationImage(
                                       image: NetworkImage(snapshot.data.pokemonSprite),
                                       fit: BoxFit.cover),
@@ -85,7 +86,7 @@ class _PokemonViewState extends State<PokemonView> {
                               Container(
                                 height: 100,
                                 width: 100,
-                                color: Colors.blue,
+                                // color: Colors.blue,
                                 child: ListView.builder(
                                   itemCount: snapshot.data.pokemonAbilities.length,
                                   itemBuilder: (context, index) {

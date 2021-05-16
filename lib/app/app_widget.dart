@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_app/app/pages/home.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_view.dart';
 
 class AppWidget extends StatelessWidget {
@@ -6,8 +7,9 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Pokemon app',
-      home: PokemonView(),
+      home: Home(),
     );
   }
 }
