@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_controller.dart';
 import 'package:pokemon_app/app/shared/components/card_component.dart';
+import 'package:pokemon_app/app/shared/components/loading_component.dart';
 import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
 import 'package:pokemon_app/app/shared/components/pokemon_sprite_component.dart';
 import 'package:pokemon_app/app/shared/models/pokemon.dart';
@@ -38,23 +39,13 @@ class _PokemonViewState extends State<PokemonView> {
                   case ConnectionState.none:
 
                   case ConnectionState.waiting:
-                    return Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Carregando Pokémon...',
-                          textScaleFactor: 1.5,
-                        ),
-                        SizedBox(height: 10.0),
-                        CircularProgressIndicator(),
-                      ],
-                    );
+                    return LoadingCircularIndicator();
 
                   // break;
 
                   default:
                     if (snapshot.hasError) {
-                      return Text('Pokemon não encontrado!');
+                      return LoadingErrorComponent();
                     }
                     //
                     else {
