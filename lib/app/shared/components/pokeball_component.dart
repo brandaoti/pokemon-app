@@ -18,7 +18,8 @@ class PokeballComponent extends StatelessWidget {
                 height: 100.0,
                 width: 200.0,
                 decoration: BoxDecoration(
-                  color: Colors.red.withOpacity(.8),
+                  // color: Colors.red.withOpacity(.8),
+                  color: Colors.red,
                   border: Border.all(width: 2.0),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(150.0),
@@ -32,17 +33,27 @@ class PokeballComponent extends StatelessWidget {
               height: 100.0,
               width: 200.0,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(.5),
-                border: Border.all(width: 2.0),
+                // color: Colors.white.withOpacity(.5),
+                color: Colors.white,
+                // border: Border.all(width: 2.0),
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(150.0),
                   bottomLeft: Radius.circular(150.0),
                 ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.5),
+                    offset: Offset(0, 10.0),
+                    blurRadius: 5,
+                  ),
+                ],
               ),
             ),
           ],
         ),
-        // aqui vai mostrar o sprite do pokemon
+
+        // * Para chamar o Sprite dentro da pokeball
+        // * Passando um filho como componente
         child,
       ],
     );

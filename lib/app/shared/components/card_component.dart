@@ -15,9 +15,11 @@ class CardComponent extends StatelessWidget {
           height: _size.height / 2.0,
           width: _size.width - 30.0,
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(.5),
+            color: Colors.white.withOpacity(.8),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20.0),
+            ),
           ),
-          // alignment: Alignment.topCenter,
         ),
       ],
     );
