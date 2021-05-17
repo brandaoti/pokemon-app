@@ -18,12 +18,11 @@ class PokeballComponent extends StatelessWidget {
                 height: 100.0,
                 width: 200.0,
                 decoration: BoxDecoration(
-                  // color: Colors.red.withOpacity(.8),
-                  color: Colors.red,
-                  border: Border.all(width: 2.0),
+                  color: Colors.red.withOpacity(.8),
+                  border: Border.all(color: Colors.redAccent),
                   borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(150.0),
-                    topLeft: Radius.circular(150.0),
+                    topRight: Radius.circular(100.0),
+                    topLeft: Radius.circular(100.0),
                   ),
                 )),
             SizedBox(height: 10.0),
@@ -33,16 +32,15 @@ class PokeballComponent extends StatelessWidget {
               height: 100.0,
               width: 200.0,
               decoration: BoxDecoration(
-                // color: Colors.white.withOpacity(.5),
-                color: Colors.white,
-                // border: Border.all(width: 2.0),
+                color: Colors.white.withOpacity(.8),
+                border: Border.all(color: Colors.grey[50]),
                 borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(150.0),
-                  bottomLeft: Radius.circular(150.0),
+                  bottomRight: Radius.circular(100.0),
+                  bottomLeft: Radius.circular(100.0),
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(.5),
+                    color: Colors.black.withOpacity(.3),
                     offset: Offset(0, 10.0),
                     blurRadius: 5,
                   ),
