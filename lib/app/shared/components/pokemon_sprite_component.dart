@@ -10,17 +10,15 @@ class PokemonSpriteComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 240.0,
-        width: 240.0,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          // color: Colors.green.withOpacity(1),
-          image: DecorationImage(
-            image: NetworkImage(pokemonSprite),
-            fit: BoxFit.cover,
-          ),
+    return Container(
+      height: 240.0,
+      width: 240.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        // color: Colors.green.withOpacity(.5),
+        image: DecorationImage(
+          image: NetworkImage(pokemonSprite),
+          fit: BoxFit.cover,
         ),
       ),
     );

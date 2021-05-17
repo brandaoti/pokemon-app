@@ -7,33 +7,37 @@ class PokeballComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _size = MediaQuery.of(context).size;
+
     return Stack(
-      alignment: Alignment.center,
+      alignment: Alignment.bottomCenter,
+      // clipBehavior: Clip.,
       children: [
         Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Top
+            SizedBox(height: _size.height / 7),
             Container(
                 height: 100.0,
                 width: 200.0,
                 decoration: BoxDecoration(
                   color: Colors.red.withOpacity(.8),
-                  border: Border.all(color: Colors.redAccent),
+                  border: Border.all(color: Colors.red),
                   borderRadius: BorderRadius.only(
                     topRight: Radius.circular(100.0),
                     topLeft: Radius.circular(100.0),
                   ),
                 )),
-            SizedBox(height: 10.0),
+            SizedBox(height: 8.0),
 
             // Bottom
             Container(
               height: 100.0,
               width: 200.0,
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(.8),
-                border: Border.all(color: Colors.grey[50]),
+                color: Colors.white.withOpacity(1),
+                border: Border.all(color: Colors.white10),
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(100.0),
                   bottomLeft: Radius.circular(100.0),

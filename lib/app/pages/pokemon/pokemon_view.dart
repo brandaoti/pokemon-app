@@ -58,9 +58,38 @@ class _PokemonViewState extends State<PokemonView> {
                     }
                     //
                     else {
-                      return PokeballComponent(
-                        child: PokemonSpriteComponent(
-                          pokemonSprite: snapshot.data.pokemonSprite,
+                      return Container(
+                        // color: Colors.green,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            PokeballComponent(
+                              child: PokemonSpriteComponent(
+                                pokemonSprite: snapshot.data.pokemonSprite,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            Card(
+                              color: Colors.red.withOpacity(.3),
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 12.0,
+                                  vertical: 2.0,
+                                ),
+                                child: Text(
+                                  snapshot.data.pokemonName.toUpperCase(),
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     }

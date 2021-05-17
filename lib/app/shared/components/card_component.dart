@@ -8,16 +8,16 @@ class CardComponent extends StatelessWidget {
     final _size = MediaQuery.of(context).size;
 
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        SizedBox(height: _size.height / 8),
+        SizedBox(height: _size.height / 7),
         Container(
-          height: _size.height / 2.0,
+          height: _size.height / 2.3,
           width: _size.width - 30.0,
           decoration: BoxDecoration(
             color: Colors.white.withOpacity(.8),
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(20.0),
+              // bottom: Radius.circular(20.0),
             ),
           ),
         ),
