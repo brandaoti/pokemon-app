@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_view.dart';
 import 'package:pokemon_app/app/shared/components/background_component.dart';
+import 'package:pokemon_app/app/shared/components/card_component.dart';
 import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
 
 class Home extends StatelessWidget {
@@ -13,7 +14,7 @@ class Home extends StatelessWidget {
         title: Text(
           'Cubos Academy - Pokémon app',
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: 24.0,
           ),
         ),
         centerTitle: true,
@@ -23,10 +24,11 @@ class Home extends StatelessWidget {
       ),
       extendBodyBehindAppBar: true,
       body: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
           BackgroundComponent(),
+          Positioned(bottom: 0.0, child: CardComponent()),
           PokemonView(),
-          // PokemonCardComponent(),
         ],
       ),
     );

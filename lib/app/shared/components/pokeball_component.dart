@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class PokemonCardComponent extends StatelessWidget {
-  final String pokemonSprite;
+class PokeballComponent extends StatelessWidget {
+  final Widget child;
 
-  const PokemonCardComponent({Key key, this.pokemonSprite}) : super(key: key);
+  const PokeballComponent({Key key, @required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,8 @@ class PokemonCardComponent extends StatelessWidget {
           children: [
             // Top
             Container(
-                height: 150.0,
-                width: 300.0,
+                height: 100.0,
+                width: 200.0,
                 decoration: BoxDecoration(
                   color: Colors.red.withOpacity(.8),
                   border: Border.all(width: 2.0),
@@ -25,24 +25,25 @@ class PokemonCardComponent extends StatelessWidget {
                     topLeft: Radius.circular(150.0),
                   ),
                 )),
-            SizedBox(height: 5.0),
+            SizedBox(height: 10.0),
 
             // Bottom
             Container(
-                height: 150.0,
-                width: 300.0,
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(.5),
-                  border: Border.all(width: 2.0),
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(150.0),
-                    bottomLeft: Radius.circular(150.0),
-                  ),
-                )),
-
-            //
+              height: 100.0,
+              width: 200.0,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(.5),
+                border: Border.all(width: 2.0),
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(150.0),
+                  bottomLeft: Radius.circular(150.0),
+                ),
+              ),
+            ),
           ],
         ),
+        // aqui vai mostrar o sprite do pokemon
+        child,
       ],
     );
   }
