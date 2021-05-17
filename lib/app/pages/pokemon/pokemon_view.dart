@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_controller.dart';
+import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
 import 'package:pokemon_app/app/shared/models/pokemon.dart';
 
 class PokemonView extends StatefulWidget {
@@ -20,9 +21,6 @@ class _PokemonViewState extends State<PokemonView> {
     final _size = MediaQuery.of(context).size;
 
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Cubos Academy - Pokemon app'),
-      // ),
       backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
@@ -41,15 +39,14 @@ class _PokemonViewState extends State<PokemonView> {
                         {
                           return Expanded(
                             child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Carregando dados...',
+                                  'Carregando Pokémon...',
                                   textScaleFactor: 1.5,
                                 ),
-                                CircularProgressIndicator(
-                                  backgroundColor: Colors.red,
-                                ),
+                                SizedBox(height: 10.0),
+                                CircularProgressIndicator(),
                               ],
                             ),
                           );
@@ -64,39 +61,22 @@ class _PokemonViewState extends State<PokemonView> {
                         else {
                           return Column(
                             children: [
-                              Container(
-                                width: 300.0,
-                                height: 300.0,
-                                alignment: Alignment.bottomCenter,
-                                decoration: BoxDecoration(
-                                  // color: Colors.red,
-                                  image: DecorationImage(
-                                      image: NetworkImage(snapshot.data.pokemonSprite),
-                                      fit: BoxFit.cover),
-                                ),
-                                child: Text(
-                                  snapshot.data.pokemonName,
-                                  style: TextStyle(
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 2.0,
-                                  ),
-                                ),
+                              PokemonCardComponent(
+                                pokemonSprite: snapshot.data.pokemonSprite,
                               ),
-                              Container(
-                                height: 100,
-                                width: 100,
-                                // color: Colors.blue,
-                                child: ListView.builder(
-                                  itemCount: snapshot.data.pokemonAbilities.length,
-                                  itemBuilder: (context, index) {
-                                    var pokemon = snapshot.data.pokemonAbilities[index];
-                                    return Text(
-                                      pokemon.abilityName,
-                                    );
-                                  },
-                                ),
-                              ),
+                              // Container(
+                              //   height: 100,
+                              //   width: 100,
+                              //   child: ListView.builder(
+                              //     itemCount: snapshot.data.pokemonAbilities.length,
+                              //     itemBuilder: (context, index) {
+                              //       var pokemon = snapshot.data.pokemonAbilities[index];
+                              //       return Text(
+                              //         pokemon.abilityName,
+                              //       );
+                              //     },
+                              //   ),
+                              // ),
                             ],
                           );
                         }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_view.dart';
 import 'package:pokemon_app/app/shared/components/background_component.dart';
+import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
 
 class Home extends StatelessWidget {
   const Home({Key key}) : super(key: key);
@@ -25,6 +26,7 @@ class Home extends StatelessWidget {
         children: [
           BackgroundComponent(),
           PokemonView(),
+          // PokemonCardComponent(),
         ],
       ),
     );

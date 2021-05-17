@@ -10,6 +10,7 @@ class BackgroundComponent extends StatelessWidget {
         image: DecorationImage(
           image: AssetImage('assets/images/background.png'),
           fit: BoxFit.cover,
+          colorFilter: ColorFilter.srgbToLinearGamma(),
         ),
       ),
     );
