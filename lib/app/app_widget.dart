@@ -10,7 +10,7 @@ class AppWidget extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pokemon app',
-      home: PokemonDetail(),
+      home: Home(),
     );
   }
 }

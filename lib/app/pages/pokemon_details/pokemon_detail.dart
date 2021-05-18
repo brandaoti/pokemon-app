@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon_app/app/shared/models/pokemon.dart';
 
 class PokemonDetail extends StatelessWidget {
-  const PokemonDetail({Key key}) : super(key: key);
+  final Pokemon pokemon;
+
+  const PokemonDetail({Key key, @required this.pokemon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      // appBar: AppBar(),
+      appBar: AppBar(),
       body: Container(
         height: double.maxFinite,
         width: double.maxFinite,
@@ -19,14 +22,14 @@ class PokemonDetail extends StatelessWidget {
             Image.network(
               'https://i.pinimg.com/originals/f2/95/76/f295769d9bd3c34ffc552e837f5304ae.png',
               width: size.width,
-              height: size.width,
+              height: size.height / 3.5,
               scale: 3,
               // fit: BoxFit.cover,
             ),
 
             //
             Positioned(
-              top: size.height * .4,
+              top: size.height * .3,
               // left: 10.0,
               child: Container(
                 height: size.height,
@@ -97,6 +100,7 @@ class PokemonDetail extends StatelessWidget {
 
                       // ? Segunda seção
                       Container(
+                        // color: Colors.green,
                         child: Column(
                           // crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -112,7 +116,44 @@ class PokemonDetail extends StatelessWidget {
                                     letterSpacing: 1.5,
                                   ),
                                 ),
-                                //TODO Instancia da habilidade, add aqui
+                                //todo Instancia da habilidade, add aqui
+                                Container(
+                                  height: 50,
+                                  width: 200,
+                                  // color: Colors.blue,
+                                  margin: const EdgeInsets.symmetric(horizontal: 4.0),
+                                  child: ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: pokemon.pokemonAbilities.length,
+                                    itemBuilder: (context, index) {
+                                      var ability = pokemon.pokemonAbilities[index];
+
+                                      // Gera uma lista com habilidades do pokemon
+                                      return Row(
+                                        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.all(4.0),
+                                            margin: const EdgeInsets.all(4.0),
+                                            decoration: BoxDecoration(
+                                              color: Colors.red.withOpacity(.2),
+                                              borderRadius: BorderRadius.circular(12.0),
+                                            ),
+                                            child: Text(
+                                              '${ability.abilityName}'.toUpperCase(),
+                                              style: TextStyle(
+                                                fontStyle: FontStyle.italic,
+                                                letterSpacing: 2.0,
+                                              ),
+                                              overflow: TextOverflow.ellipsis,
+                                              textAlign: TextAlign.justify,
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  ),
+                                ),
                               ],
                             ),
 

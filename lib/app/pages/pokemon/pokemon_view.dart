@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:pokemon_app/app/pages/pokemon/pokemon_controller.dart';
+import 'package:pokemon_app/app/pages/pokemon_details/pokemon_detail.dart';
 import 'package:pokemon_app/app/shared/components/card_component.dart';
 import 'package:pokemon_app/app/shared/components/loading_component.dart';
 import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
@@ -49,38 +50,48 @@ class _PokemonViewState extends State<PokemonView> {
                     }
                     //
                     else {
-                      return Container(
-                        // color: Colors.green,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            PokeballComponent(
-                              child: PokemonSpriteComponent(
-                                pokemonSprite: snapshot.data.pokemonSprite,
-                              ),
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PokemonDetail(pokemon: snapshot.data),
                             ),
-                            SizedBox(height: 20),
-                            Card(
-                              color: Colors.red.withOpacity(.3),
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12.0,
-                                  vertical: 2.0,
+                          );
+                        },
+                        child: Container(
+                          // color: Colors.green,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              PokeballComponent(
+                                child: PokemonSpriteComponent(
+                                  pokemonSprite: snapshot.data.pokemonSprite,
                                 ),
-                                child: Text(
-                                  snapshot.data.pokemonName.toUpperCase(),
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 24.0,
+                              ),
+                              SizedBox(height: 20),
+                              Card(
+                                color: Colors.red.withOpacity(.3),
+                                elevation: 5,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12.0,
+                                    vertical: 2.0,
+                                  ),
+                                  child: Text(
+                                    snapshot.data.pokemonName.toUpperCase(),
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 24.0,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     }
