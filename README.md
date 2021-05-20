@@ -8,7 +8,7 @@
    Pokémon App 
 </h1>
 
-<p align="center"> Aplicativo para exibir Pokémon
+<p align="center"> Exibindo Lista de habilidades do Pokémon com MVC
 </p>
 
 <p align="center">
