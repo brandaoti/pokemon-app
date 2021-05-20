@@ -7,20 +7,20 @@ class PokemonModel {
 
   // variavel para guardar o pokemon da API
   Future<Pokemon> _pokemon;
-  int _pokemonID = 1; // * trocar o pokemon
+  // int _pokemonID = 1; // * trocar o pokemon
 
   // getter para ter acesso a variavel _pokemon e acessá-la do controller
-  Future<Pokemon> get getPokemon => _pokemon;
+  // Future<Pokemon> get getPokemon => _pokemon;
 
-  int get getPokemonID => _pokemonID;
+  // int get getPokemonID => _pokemonID;
 
   // para poder atribuir um ID aleatorio no controller
-  set setPokemonID(int id) {
-    _pokemonID = id;
-  }
+  // set setPokemonID(int id) {
+  //   // _pokemonID = id;
+  // }
 
   // Método para receber os dados da API
-  requestPokemonApi(int id) {
-    return _pokemon = _pokemonApi.fetchPokemon(id);
+  Future<Pokemon> requestPokemonApi(int id) async {
+    return await _pokemonApi.fetchPokemon(id);
   }
 }
