@@ -8,7 +8,7 @@
    Pokémon App 
 </h1>
 
-<p align="center"> Exibindo Lista de habilidades do Pokémon usando MVVM
+<p align="center"> Exibindo busca do Pokémon usando MVVM
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 [//]: # (Adicione seus gifs / imagens aqui:)
 
 <p align="center"> 
-  <img src="github/screenshots/abilities.gif" alt="demo" height="600"> 
+  <img src="github/screenshots/pokemon.gif" alt="demo" height="600"> 
 </p>
 
 
