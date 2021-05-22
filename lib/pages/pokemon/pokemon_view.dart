@@ -7,6 +7,7 @@ import '../../shared/components/pokeball_component.dart';
 import '../../shared/components/pokemon_sprite_component.dart';
 import '../../shared/data/models/pokemon.dart';
 import '../pokemon_details/pokemon_detail.dart';
+import 'pokemon_view_model.dart';
 
 class PokemonView extends StatefulWidget {
   PokemonView({Key key}) : super(key: key);
