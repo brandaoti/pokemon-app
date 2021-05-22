@@ -1,14 +1,13 @@
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:pokemon_app/app/pages/pokemon/pokemon_controller.dart';
-import 'package:pokemon_app/app/pages/pokemon_details/pokemon_detail.dart';
-import 'package:pokemon_app/app/shared/components/card_component.dart';
-import 'package:pokemon_app/app/shared/components/loading_component.dart';
-import 'package:pokemon_app/app/shared/components/pokeball_component.dart';
-import 'package:pokemon_app/app/shared/components/pokemon_sprite_component.dart';
-import 'package:pokemon_app/app/shared/models/pokemon.dart';
+
+import '../../shared/components/loading_component.dart';
+import '../../shared/components/pokeball_component.dart';
+import '../../shared/components/pokemon_sprite_component.dart';
+import '../../shared/data/models/pokemon.dart';
+import '../pokemon_details/pokemon_detail.dart';
+import 'pokemon_view_model.dart';
 
 class PokemonView extends StatefulWidget {
   PokemonView({Key key}) : super(key: key);
@@ -18,7 +17,7 @@ class PokemonView extends StatefulWidget {
 }
 
 class _PokemonViewState extends State<PokemonView> {
-  final controller = PokemonController();
+  final controller = PokemonViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +32,8 @@ class _PokemonViewState extends State<PokemonView> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FutureBuilder<Pokemon>(
-              future: controller.getPokemon,
+            StreamBuilder<Pokemon>(
+              stream: controller.stream,
               builder: (_, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.none:
@@ -110,9 +109,7 @@ class _PokemonViewState extends State<PokemonView> {
           child: ElevatedButton(
             child: Text('Buscar Pokemon'),
             onPressed: () {
-              setState(() {
-                controller.loadPokemon();
-              });
+              controller.loadPokemon();
             },
           ),
         ),

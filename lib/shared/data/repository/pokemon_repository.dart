@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:pokemon_app/app/shared/models/pokemon.dart';
+import '../models/pokemon.dart';
 
-class PokemonApi {
+class PokemonRepository {
   //
   final String _authority = "pokeapi.co";
   // final String _path = "/api/v2/pokemon/1";

@@ -8,7 +8,7 @@
    Pokémon App 
 </h1>
 
-<p align="center"> Aplicativo para exibir Pokémon
+<p align="center"> Exibindo busca do Pokémon usando MVVM
 </p>
 
 <p align="center">
@@ -20,7 +20,7 @@
 [//]: # (Adicione seus gifs / imagens aqui:)
 
 <p align="center"> 
-  <img src="github/screenshots/abilities.gif" alt="demo" height="600"> 
+  <img src="github/screenshots/pokemon.gif" alt="demo" height="600"> 
 </p>
 
 
@@ -33,9 +33,11 @@
 
 <hr />
 
-<!-- ## **Informações:** -->
+## **Informações:**
 [//]: # (Descreva seu objetivo e o que foi usado no projeto:)
 
+* Feature `MVVM`
+* Feature `STREAMS`
 <!-- * Projeto criado com objetivo de desenvolver habilidades no desenvolvimento de aplicativos com Flutter.
 * Minha principal dificuldade no desenvolvimento do projeto, foi fazer a recuperação dos dados para serem exibidos na tela.
 * Foi usado estrutura `MVC + SetState` no projeto.
