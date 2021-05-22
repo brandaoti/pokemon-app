@@ -1,7 +1,12 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../../shared/models/pokemon.dart';
+
+import '../../shared/components/loading_component.dart';
+import '../../shared/components/pokeball_component.dart';
+import '../../shared/components/pokemon_sprite_component.dart';
+import '../../shared/data/models/pokemon.dart';
+import '../pokemon_details/pokemon_detail.dart';
 
 class PokemonView extends StatefulWidget {
   PokemonView({Key key}) : super(key: key);

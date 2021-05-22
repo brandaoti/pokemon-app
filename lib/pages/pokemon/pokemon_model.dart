@@ -1,10 +1,10 @@
-import '../../shared/models/pokemon.dart';
-import '../../shared/repository/pokemon_api.dart';
+import '../../shared/data/models/pokemon.dart';
+import '../../shared/data/repository/pokemon_repository.dart';
 
 // OBS, aqui vamos fazer a coleta dos dados do REPOSITORY
 
 class PokemonModel {
-  final _repositoryAPI = PokemonApi();
+  final _repositoryAPI = PokemonRepository();
 
   Future<Pokemon> carregarPokemon(int id) {
     return _repositoryAPI.fetchPokemon(id);
