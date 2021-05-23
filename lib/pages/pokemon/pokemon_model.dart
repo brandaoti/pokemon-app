@@ -6,7 +6,9 @@ import '../../shared/data/repository/pokemon_repository.dart';
 class PokemonModel {
   final _repositoryAPI = PokemonRepository();
 
+  Future<Pokemon> pokemon;
+
   Future<Pokemon> getPokemonRepository(int id) {
-    return _repositoryAPI.fetchPokemon(id);
+    return pokemon = _repositoryAPI.fetchPokemon(id);
   }
 }

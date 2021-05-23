@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import '../models/pokemon.dart';
 
 class PokemonRepository {
-  //
   final String _authority = "pokeapi.co";
   // final String _path = "/api/v2/pokemon/1";
 
